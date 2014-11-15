@@ -13,12 +13,14 @@ module states {
 
     export function Menu() {
         var mailPilotText: createjs.Text;
+        var play;
 
         game = new createjs.Container();
 
         ocean = new objects.Ocean(game);
 
         plane = new objects.Plane(game);
+
 
         mailPilotText = new createjs.Text("Space Ace", constants.GAME_FONT, constants.FONT_COLOUR);
         mailPilotText.regX = mailPilotText.getBounds().width * 0.5;
@@ -27,7 +29,14 @@ module states {
         mailPilotText.y = stage.canvas.height * 0.5;
         game.addChild(mailPilotText);
 
-        mailPilotText.addEventListener("click", function (e) {
+        play = new createjs.Bitmap("assets/images/play.png");
+        play.regX = play.getBounds().width * 0.5;
+        play.regY = 100;
+        play.x = stage.canvas.width * 0.5;
+        play.y = stage.canvas.height * 0.5;
+        game.addChild(play);
+
+        play.addEventListener("click", function (e) {
             stage.removeChild(game);
             game.removeAllChildren();
             game.removeAllEventListeners();

@@ -31,7 +31,8 @@
         static manifest = [
             { id: "ocean", src: "assets/images/ocean.png" },
             { id: "yay", src: "assets/sounds/yay.ogg" },
-            { id: "thunder", src: "assets/sounds/thunder.ogg" }
+            { id: "thunder", src: "assets/sounds/thunder.ogg" },
+            { id: "thunder", src: "assets/images/play.png" }
         ];
 
         static init() {
