@@ -3,16 +3,16 @@
 /// <reference path="../objects/island.ts" />
 /// <reference path="../objects/ocean.ts" />
 /// <reference path="../objects/plane.ts" />
-var states;
-(function (states) {
-    function menuState() {
+
+module states {
+
+    export function menuState() {
         ocean.update();
         plane.update();
     }
-    states.menuState = menuState;
 
-    function Menu() {
-        var mailPilotText;
+    export function Menu() {
+        var mailPilotText: createjs.Text;
 
         game = new createjs.Container();
 
@@ -20,9 +20,9 @@ var states;
 
         plane = new objects.Plane(game);
 
-        mailPilotText = new createjs.Text("Mail Pilot", constants.GAME_FONT, constants.FONT_COLOUR);
+        mailPilotText = new createjs.Text("Space Ace", constants.GAME_FONT, constants.FONT_COLOUR);
         mailPilotText.regX = mailPilotText.getBounds().width * 0.5;
-        mailPilotText.regY = mailPilotText.getBounds().height * 0.5;
+        mailPilotText.regY = 200;
         mailPilotText.x = stage.canvas.width * 0.5;
         mailPilotText.y = stage.canvas.height * 0.5;
         game.addChild(mailPilotText);
@@ -37,6 +37,5 @@ var states;
 
         stage.addChild(game);
     }
-    states.Menu = Menu;
-})(states || (states = {}));
-//# sourceMappingURL=menu.js.map
+
+}  

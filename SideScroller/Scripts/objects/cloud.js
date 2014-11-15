@@ -16,7 +16,7 @@ var objects;
         }
         Cloud.prototype.reset = function () {
             this.y = Math.floor((Math.random()) * stage.canvas.height);
-            this.x = 900;
+            this.x = 1200;
             this.dy = Math.floor(Math.random() * 1 + 5);
             this.dx = Math.floor(Math.random() * 10 - 2);
         };

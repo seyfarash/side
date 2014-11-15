@@ -65,6 +65,7 @@
     <Content Include="assets\images\o2.gif" />
     <Content Include="assets\images\ocean.png" />
     <Content Include="assets\images\plane.png" />
+    <Content Include="assets\images\play.png" />
     <Content Include="assets\sounds\yay.ogg" />
     <Content Include="assets\sounds\engine.ogg" />
     <Content Include="assets\sounds\thunder.ogg" />

@@ -16,16 +16,15 @@ var objects;
             this.game = game;
             this.dx = 2;
             this.game.addChild(this);
-            this.game.addChild(this);
             this.reset();
         }
         Ocean.prototype.reset = function () {
-            this.x = -50;
+            this.x = 0;
         };
 
         Ocean.prototype.update = function () {
             this.x -= this.dx;
-            if (this.x < -755) {
+            if (this.x < -650) {
                 this.reset();
             }
         };
