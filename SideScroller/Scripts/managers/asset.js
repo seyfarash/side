@@ -21,7 +21,7 @@
             ],
             "animations": {
                 "asteroid": [0],
-                "island": [1],
+                "fuel": [1],
                 "plane": {
                     frames: [2, 3, 4],
                     speed: 1
@@ -30,11 +30,11 @@
         };
 
         Asset.manifest = [
-            { id: "ocean", src: "assets/images/ocean.png" },
+            { id: "ocean", src: "assets/images/space.png" },
             { id: "yay", src: "assets/sounds/Fuel.wav" },
             { id: "bg", src: "assets/sounds/bg.mp3" },
             { id: "lose", src: "assets/sounds/lose.mp3" },
-            { id: "thunder", src: "assets/sounds/explosion.wav" },
+            { id: "explosion", src: "assets/sounds/explosion.wav" },
             { id: "play", src: "assets/images/play.png" },
             { id: "try", src: "assets/images/try.png" },
             { id: "instruction", src: "assets/images/instruction.png" }

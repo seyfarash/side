@@ -21,6 +21,7 @@ module states {
 
         stage.cursor = "";
 
+        //score
         ScoreText = new createjs.Text(scoreboard.score.toString(), constants.GAME_FONT, constants.FONT_COLOUR);
         ScoreText.regX = ScoreText.getBounds().width * 0.5;
         ScoreText.regY = ScoreText.getBounds().height * 0.5;
@@ -28,6 +29,7 @@ module states {
         ScoreText.y = 180;
         game.addChild(ScoreText);
 
+        //game over display
         gameOverText = new createjs.Text("Game Over", constants.GAME_FONT, constants.FONT_COLOUR);
         gameOverText.regX = gameOverText.getBounds().width * 0.5;
         gameOverText.regY = gameOverText.getBounds().height * 0.5;
@@ -35,6 +37,7 @@ module states {
         gameOverText.y = stage.canvas.height * 0.5;
         game.addChild(gameOverText);
 
+        //Try again button
         tryAgain = new createjs.Bitmap("assets/images/try.png");
         tryAgain.regX = tryAgain.getBounds().width * 0.5;
         tryAgain.regY = -40;
@@ -43,15 +46,7 @@ module states {
         game.addChild(tryAgain);
         
 
-
-        gameOverText.addEventListener("click", function (e) {
-            stage.removeChild(game);
-            game.removeAllChildren();
-            game.removeAllEventListeners();
-            currentState = constants.MENU_STATE;
-            changeState(currentState);
-        });
-
+        //try again button event
         tryAgain.addEventListener("click", function (e) {
             stage.removeChild(game);
             createjs.Sound.stop();

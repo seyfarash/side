@@ -21,7 +21,7 @@ module states {
 
         plane = new objects.Plane(game);
 
-
+        //Game name and Title
         mailPilotText = new createjs.Text("Space Ace", constants.GAME_FONT, constants.FONT_COLOUR);
         mailPilotText.regX = mailPilotText.getBounds().width * 0.5;
         mailPilotText.regY = 200;
@@ -29,6 +29,7 @@ module states {
         mailPilotText.y = stage.canvas.height * 0.5;
         game.addChild(mailPilotText);
 
+        //Play Button
         play = new createjs.Bitmap("assets/images/play.png");
         play.regX = play.getBounds().width * 0.5;
         play.regY = 100;
@@ -36,6 +37,7 @@ module states {
         play.y = stage.canvas.height * 0.5;
         game.addChild(play);
 
+        //Instructions Button
         instruction = new createjs.Bitmap("assets/images/instruction.png");
         instruction.regX = instruction.getBounds().width * 0.5;
         instruction.regY = -30;
@@ -43,6 +45,8 @@ module states {
         instruction.y = stage.canvas.height * 0.5;
         game.addChild(instruction);
 
+
+        //Click event listeners for two buttons below
         play.addEventListener("click", function (e) {
             stage.removeChild(game);
             game.removeAllChildren();

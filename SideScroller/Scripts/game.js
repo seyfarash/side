@@ -31,7 +31,7 @@ function preload() {
 function init() {
     stage = new createjs.Stage(document.getElementById("canvas"));
     stage.enableMouseOver(20);
-    stage.cursor = 'none';
+    stage.cursor = 'none'; //remove mouse cursor when playing game.
     createjs.Ticker.setFPS(60);
     createjs.Ticker.addEventListener("tick", gameLoop);
 
@@ -56,13 +56,13 @@ function changeState(state) {
             break;
         case constants.PLAY_STATE:
             currentStateFunction = states.playState;
-            createjs.Sound.play("bg");
+            createjs.Sound.play("bg"); //play background music when game starts
             states.Play();
             break;
         case constants.GAME_OVER_STATE:
             currentStateFunction = states.gameOverState;
             createjs.Sound.stop();
-            createjs.Sound.play("lose");
+            createjs.Sound.play("lose"); //play losing sound after game over displayed
             states.GameOver();
             break;
         case constants.INSTRUCTIONS_STATE:
@@ -127,7 +127,7 @@ function planeAndCloud(theCloud) {
     p2.y = cloud.y;
 
     if (distance(p1, p2) <= ((plane.height * 0.5) + (cloud.height * 0.5))) {
-        createjs.Sound.play("thunder");
+        createjs.Sound.play("explosion");
         scoreboard.lives -= 1;
         cloud.reset();
     }
