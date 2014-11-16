@@ -10,15 +10,14 @@ var objects;
     var Cloud = (function (_super) {
         __extends(Cloud, _super);
         function Cloud(game) {
-            _super.call(this, "cloud", game);
+            _super.call(this, "asteroid", game);
             this.game.addChild(this);
             this.reset();
         }
         Cloud.prototype.reset = function () {
             this.y = Math.floor((Math.random()) * stage.canvas.height);
             this.x = 1200;
-            this.dy = Math.floor(Math.random() * 1 + 5);
-            this.dx = Math.floor(Math.random() * 10 - 2);
+            this.dx = Math.floor(Math.random() * 10 + 2);
         };
 
         Cloud.prototype.update = function () {

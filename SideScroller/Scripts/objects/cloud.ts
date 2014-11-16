@@ -4,7 +4,7 @@
         dy: number;
         dx: number;
         constructor(game:createjs.Container) {
-            super("cloud", game);
+            super("asteroid", game);
             this.game.addChild(this);
             this.reset();
         }
@@ -12,8 +12,7 @@
         reset() {
             this.y = Math.floor((Math.random()) * stage.canvas.height);
             this.x = 1200;
-            this.dy = Math.floor(Math.random() * 1 + 5);
-            this.dx = Math.floor(Math.random() * 10 - 2);
+            this.dx = Math.floor(Math.random() * 10 + 2);
         }
 
         update() {

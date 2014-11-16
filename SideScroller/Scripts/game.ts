@@ -16,7 +16,7 @@ var game: createjs.Container;
 // game objects
 var plane: objects.Plane;
 var island: objects.Island;
-var clouds = [];
+var asteroid = [];
 var ocean: objects.Ocean;
 var scoreboard: objects.Scoreboard;
 
@@ -35,6 +35,7 @@ function preload(): void {
 function init(): void {
     stage = new createjs.Stage(document.getElementById("canvas"));
     stage.enableMouseOver(20);
+    stage.cursor = 'none';
     createjs.Ticker.setFPS(60);
     createjs.Ticker.addEventListener("tick", gameLoop);
 
@@ -64,10 +65,13 @@ function changeState(state: number) {
             break;
         case constants.PLAY_STATE:
             currentStateFunction = states.playState;
+            createjs.Sound.play("bg");
             states.Play();
             break;
         case constants.GAME_OVER_STATE:
             currentStateFunction = states.gameOverState;
+            createjs.Sound.stop();
+            createjs.Sound.play("lose");
             states.GameOver();
             break;
         case constants.INSTRUCTIONS_STATE:
@@ -151,7 +155,7 @@ function collisionCheck() {
     planeAndIsland();
 
     for (var count = 0; count < constants.CLOUD_NUM; count++) {
-        planeAndCloud(clouds[count]);
+        planeAndCloud(asteroid[count]);
     }
 }
 

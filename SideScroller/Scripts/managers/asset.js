@@ -20,7 +20,7 @@
                 [230, 69, 65, 65]
             ],
             "animations": {
-                "cloud": [0],
+                "asteroid": [0],
                 "island": [1],
                 "plane": {
                     frames: [2, 3, 4],
@@ -31,9 +31,13 @@
 
         Asset.manifest = [
             { id: "ocean", src: "assets/images/ocean.png" },
-            { id: "yay", src: "assets/sounds/yay.ogg" },
-            { id: "thunder", src: "assets/sounds/thunder.ogg" },
-            { id: "thunder", src: "assets/images/play.png" }
+            { id: "yay", src: "assets/sounds/Fuel.wav" },
+            { id: "bg", src: "assets/sounds/bg.mp3" },
+            { id: "lose", src: "assets/sounds/lose.mp3" },
+            { id: "thunder", src: "assets/sounds/explosion.wav" },
+            { id: "play", src: "assets/images/play.png" },
+            { id: "try", src: "assets/images/try.png" },
+            { id: "instruction", src: "assets/images/instruction.png" }
         ];
         return Asset;
     })();

@@ -12,8 +12,8 @@ var states;
     states.menuState = menuState;
 
     function Menu() {
-        var mailPilotText;
-        var play;
+        var mailPilotText, instr;
+        var play, instruction;
 
         game = new createjs.Container();
 
@@ -35,12 +35,28 @@ var states;
         play.y = stage.canvas.height * 0.5;
         game.addChild(play);
 
+        instruction = new createjs.Bitmap("assets/images/instruction.png");
+        instruction.regX = instruction.getBounds().width * 0.5;
+        instruction.regY = -30;
+        instruction.x = stage.canvas.width * 0.5;
+        instruction.y = stage.canvas.height * 0.5;
+        game.addChild(instruction);
+
         play.addEventListener("click", function (e) {
             stage.removeChild(game);
             game.removeAllChildren();
             game.removeAllEventListeners();
             currentState = constants.PLAY_STATE;
             changeState(currentState);
+        });
+
+        instruction.addEventListener("click", function (e) {
+            instr = new createjs.Text("Avoid asteroids, collect fuel!", constants.GAME_FONT, constants.FONT_COLOUR);
+            instr.regX = instr.getBounds().width * 0.5;
+            instr.regY = -100;
+            instr.x = stage.canvas.width * 0.5;
+            instr.y = stage.canvas.height * 0.5;
+            game.addChild(instr);
         });
 
         stage.addChild(game);

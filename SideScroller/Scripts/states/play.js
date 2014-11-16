@@ -12,7 +12,7 @@ var states;
         plane.update();
 
         for (var count = 0; count < constants.CLOUD_NUM; count++) {
-            clouds[count].update();
+            asteroid[count].update();
         }
 
         collisionCheck();
@@ -37,7 +37,7 @@ var states;
         plane = new objects.Plane(game);
 
         for (var count = 0; count < constants.CLOUD_NUM; count++) {
-            clouds[count] = new objects.Cloud(game);
+            asteroid[count] = new objects.Cloud(game);
         }
 
         scoreboard = new objects.Scoreboard(game);

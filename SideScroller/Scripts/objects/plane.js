@@ -16,7 +16,7 @@ var objects;
             this.game.addChild(this);
         }
         Plane.prototype.update = function () {
-            this.y = 477;
+            this.y = stage.mouseY;
             this.x = stage.mouseX;
         };
         return Plane;
